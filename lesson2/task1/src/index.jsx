@@ -2,8 +2,6 @@ import { createStore } from 'redux';
 
 const INCREMENT = 'COUNTER/INCREMENT';
 const DECREMENT = 'COUNTER/DECREMENT';
-const increment = () => ({ type: INCREMENT });
-const decrement = () => ({ type: DECREMENT });
 
 export const counterReduser = (state = 0, action) => {
   switch (action.type) {
