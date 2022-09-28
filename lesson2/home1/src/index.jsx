@@ -1,5 +1,5 @@
 import store from './store';
-import { addUser, delUser } from './users.actions';
+import { addUser, deleteUser } from './users.actions';
 
 const onHandleAdd = () => {
   store.dispatch(addUser({ name: 'Jack', id: 45 }));
@@ -7,7 +7,7 @@ const onHandleAdd = () => {
 document.querySelector('.btn__add').addEventListener('click', onHandleAdd);
 
 const onHandleDel = () => {
-  store.dispatch(delUser(45));
+  store.dispatch(deleteUser(45));
 };
 document.querySelector('.btn__del').addEventListener('click', onHandleDel);
 

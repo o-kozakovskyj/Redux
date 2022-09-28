@@ -5,7 +5,8 @@ export const addUser = user => ({
   type: ADD,
   payload: user,
 });
-export const delUser = id => ({
+
+export const deleteUser = id => ({
   type: DELETE,
   payload: id,
 });
