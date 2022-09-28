@@ -56,5 +56,5 @@ store.subscribe(() => {
     })
     .join('');
 
-  resultElem.textContent = state.history.length === 0 ? 0 : `${historyString} = ${currentValue}`;
+  resultElem.textContent = state.history.length === 0 ? null : `${historyString} = ${currentValue}`;
 });
