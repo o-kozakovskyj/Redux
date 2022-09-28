@@ -9,7 +9,9 @@ const resetBtn = document.querySelector('[data-action="reset"]');
 const onIncrement = () => {
   store.dispatch(increment());
 };
+
 incrementBtn.addEventListener('click', onIncrement);
+
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, val) => acc + val, 0);
@@ -23,6 +25,7 @@ store.subscribe(() => {
     .join('');
   resultElem.textContent = `${historyString} = ${currentValue}`;
 });
+
 const onDecrement = () => {
   store.dispatch(decrement());
 };
