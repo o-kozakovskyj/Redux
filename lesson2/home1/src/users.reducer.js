@@ -1,4 +1,4 @@
-import { ADD, DEL } from './users.actions';
+import { ADD, DELETE } from './users.actions';
 
 const initialState = {
   userList: [],
@@ -12,7 +12,7 @@ export const usersReduser = (state = initialState, action) => {
         userList: newUser,
       };
     }
-    case DEL: {
+    case DELETE: {
       const newUserList = state.userList.filter(user => user.id !== action.payload);
       return {
         userList: newUserList,
