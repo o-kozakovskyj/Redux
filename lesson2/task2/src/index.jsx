@@ -13,7 +13,14 @@ incrementBtn.addEventListener('click', onIncrement);
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, val) => acc + val, 0);
-  const historyString = state.history.join(' ');
+  const historyString = state.history
+    .map(number => {
+      if (number > 0) {
+        return `+${number}`;
+      }
+      return number;
+    })
+    .join('');
   resultElem.textContent = `${historyString} = ${currentValue}`;
 });
 const onDecrement = () => {
@@ -23,7 +30,14 @@ decrementBtn.addEventListener('click', onDecrement);
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, val) => acc + val, 0);
-  const historyString = state.history.join(' ');
+  const historyString = state.history
+    .map(number => {
+      if (number > 0) {
+        return `+${number}`;
+      }
+      return number;
+    })
+    .join('');
   resultElem.textContent = `${historyString} = ${currentValue}`;
 });
 const onReset = () => {
@@ -40,7 +54,7 @@ store.subscribe(() => {
       }
       return number;
     })
-    .join(' ');
+    .join('');
 
   resultElem.textContent = state.history.length === 0 ? 0 : `${historyString} = ${currentValue}`;
 });
