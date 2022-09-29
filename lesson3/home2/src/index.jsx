@@ -5,7 +5,7 @@ import store from './store';
 store.subscribe(() => {
   console.log(store.getState());
 });
-store.dispatch(setLanguage('jp'));
+store.dispatch(setLanguage('en'));
 store.dispatch(setLanguage('en'));
 store.dispatch(setLanguage('es'));
 
