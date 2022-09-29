@@ -12,3 +12,4 @@ store.dispatch(setLanguage('es'));
 store.dispatch(addProduct({ id: 1, name: 'TV' }));
 store.dispatch(addProduct({ id: 2, name: 'BBQ' }));
 store.dispatch(removeProduct(1));
+store.dispatch(addProduct({ id: 3, name: 'HeadPhones' }));
