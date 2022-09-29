@@ -8,14 +8,10 @@ const userReducer = (state = initialState, action) => {
     default:
       return state;
     case SET_USER: {
-      return {
-        user: action.payload.userData,
-      };
+      return action.payload.userData;
     }
     case REMOVE_USER: {
-      return {
-        user: null,
-      };
+      return null;
     }
   }
 };
