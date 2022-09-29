@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { createStore, combineReducers } from 'redux';
 import languageReducer from './language.reducer';
-import cartReducer from './cart.reduser';
+import cartReducer from './cart.reducer';
 import userReducer from './user.reduce';
 
 const appReducer = combineReducers({

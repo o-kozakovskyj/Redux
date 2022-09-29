@@ -1,4 +1,4 @@
-import setLanguage from './language.actions';
+import { setLanguage } from './language.actions';
 import { addProduct, removeProduct } from './cart.actions';
 import store from './store';
 
