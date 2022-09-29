@@ -9,9 +9,7 @@ const cartReducer = (state = initialState, action) => {
     default:
       return state;
     case ADD_PRODUCT: {
-      return {
-        ...state.productsList.concat(action.payload.product),
-      };
+      return state.productsList.concat(action.payload.product);
     }
 
     case REMOVE_PRODUCT: {
