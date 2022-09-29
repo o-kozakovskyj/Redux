@@ -1,15 +1,13 @@
-import { EN, JP, ES } from './language.actions';
-
 const initialState = {
   language: 'en',
 };
 const languageReduser = (state = initialState, actions) => {
   switch (actions.type) {
-    case EN:
+    case 'en':
       return 'en';
-    case ES:
+    case 'es':
       return 'es';
-    case JP:
+    case 'jp':
       return 'jp';
     default:
       return state;
