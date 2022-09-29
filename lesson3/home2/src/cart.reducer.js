@@ -9,7 +9,10 @@ const cartReducer = (state = initialState, action) => {
     default:
       return state;
     case ADD_PRODUCT: {
-      return [...state.products.concat(action.payload.product)];
+      return {
+        ...state,
+        products: state.products.concat(action.payload.product),
+      };
     }
     case REMOVE_PRODUCT: {
       const newProducts = state.products.filter(product => product.id !== action.payload.productId);
