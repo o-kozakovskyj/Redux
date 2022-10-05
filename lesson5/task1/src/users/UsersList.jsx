@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { usersListSelector, currentPageSelector } from './users.selectors';
 import Pagination from './Pagination';
 import User from './User';
 import * as actions from './users.actions';
@@ -45,8 +44,8 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => ({
-  currentPage: currentPageSelector(state),
-  users: usersListSelector(state),
+  currentPage: state.users.currentPage,
+  users: state.users.usersList,
 });
 const mapDispatch = {
   nextPage: actions.nextPage,
