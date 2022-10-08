@@ -1,7 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-import { createStore, applyMiddleware, compose } from 'redux';
-import counterReducer from './counter.reducer';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import usersReducer from './users/users.reducer';
 
+const reducer = combineReducers({
+  users: usersReducer,
+});
 const logger = store => next => action => {
   console.group(action.type);
   console.info('dispatching', action);
@@ -11,5 +14,6 @@ const logger = store => next => action => {
   return result;
 };
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(counterReducer, composeEnhancers(applyMiddleware(logger)));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(logger)));
+
 export default store;
