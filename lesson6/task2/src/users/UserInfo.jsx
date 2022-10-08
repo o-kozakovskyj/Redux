@@ -5,6 +5,7 @@ import { isFethingSelector, userDataSelector } from './users.selectors';
 import Spinner from './Spinner';
 
 const UserInfo = ({ userData, isFetching }) => {
+  console.log(userData);
   if (isFetching) {
     return <Spinner />;
   }
