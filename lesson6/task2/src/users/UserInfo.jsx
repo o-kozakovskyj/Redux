@@ -3,11 +3,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { isFethingSelector, userDataSelector } from './users.selectors';
-import Spinner from './Spinner';
 
 const UserInfo = ({ userData, isFetching }) => {
   if (isFetching) {
-    return <Spinner />;
+    return <span className="spinner"></span>;
   }
   if (!userData) {
     return null;
